@@ -2,11 +2,12 @@
 
 __version__ = "0.0.1"
 
+import SocketServer
 from ernie import Ernie
 
 def mod(name):
     return Ernie.mod(name)
 
-def start():
-    server = Ernie()
-    server.start()
+def start(host='localhost', port=9999):
+    Ernie.log("Starting")
+    SocketServer.TCPServer((host, port), Ernie).serve_forever()
