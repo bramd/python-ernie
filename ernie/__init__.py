@@ -1,10 +1,8 @@
-
 """BERT-ERNIE Library"""
 
 __version__ = "0.0.1"
 
-import bert
-from ernie import Ernie, Mod
+from ernie import Ernie
 
 def mod(name):
     return Ernie.mod(name)
