@@ -83,7 +83,7 @@ class Ernie(SocketServer.StreamRequestHandler):
             opy = (bert.Atom('error'), (bert.Atom('server'), 0, "Invalid request: " + ipy.__str__()))
             self.log("<- " + opy.__str__())
             self.write_berp(opy)
-    
+
 
 class ServerError(Exception):
     def __str__(self):
@@ -97,3 +97,4 @@ class Mod(object):
     
     def fun(self, name, func):
         self.funs[name] = func
+
