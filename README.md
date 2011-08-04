@@ -56,8 +56,6 @@ Just create your own fork, hack on it, and then send me a pull request once done
 Todo
 ---------
 
-I'll be the first to admin I am still new to Python.  So if I am way off on best practices in Python, let me know!
-
 1. Update exception handling to return traceback
 1. Ensure correct handling around read operations
 1. See if I can clean up the way you define your modules
