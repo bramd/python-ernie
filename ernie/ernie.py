@@ -78,7 +78,7 @@ class Ernie(SocketServer.StreamRequestHandler):
             try:
                 res = self.dispatch(mod, fun, args)
             finally:
-                self.write_berp(bert.Atom('noreply'))
+                self.write_berp((bert.Atom('noreply'),))
         else:
             opy = (bert.Atom('error'), (bert.Atom('server'), 0, "Invalid request: " + ipy.__str__()))
             self.log("<- " + opy.__str__())
