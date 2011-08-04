@@ -1,7 +1,10 @@
 Python-Ernie
 ============
 
-By Ken Robertson (ken@invalidlogic.com)
+Original code by Ken Robertson.
+Significant contributions by Jonathan Stoppani.
+This version being maintained by Tyler Neylon at:
+[https://github.com/tylerneylon/python-ernie](https://github.com/tylerneylon/python-ernie)
 
 Python-Ernie is a port of the Ruby-based Ernie server by Tom Preston-Werner.  Python-Ernie is the Python server implementation for the BERT-RPC specification.
 
@@ -19,7 +22,7 @@ To install Python-Ernie, you will also need to install the Python port of BERT s
     $ git clone git://github.com/samuel/python-bert.git
     $ sudo python python-bert/setup.py install
 
-To install python-ernie itself, run:
+To install python-ernie itself, git clone this repo and run:
 
     $ sudo ./setup.py install
 
@@ -42,7 +45,7 @@ Contribute
 
 If you'd like to hack on Python-Ernie, start by forking my repo on GitHub:
 
-http://github.com/krobertson/python-ernie
+http://github.com/tylerneylon/python-ernie
 
 Just create your own fork, hack on it, and then send me a pull request once done.
 
