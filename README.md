@@ -17,14 +17,17 @@ Installation
 To install Python-Ernie, you will also need to install the Python port of BERT serializers and Erlastic.
 
     $ git clone git://github.com/samuel/python-erlastic.git
-    $ sudo python python-erlastic/setup.py install
+    $ cd python-erlastic
+    $ sudo python setup.py install
     
     $ git clone git://github.com/samuel/python-bert.git
-    $ sudo python python-bert/setup.py install
+    $ cd python-bert
+    $ sudo python setup.py install
 
-To install python-ernie itself, git clone this repo and run:
+To install python-ernie itself, git clone this repo and run
+this from the python-ernie directory:
 
-    $ sudo ./setup.py install
+    $ sudo python setup.py install
 
 
 Example Handler
