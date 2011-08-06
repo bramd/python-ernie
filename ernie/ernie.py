@@ -98,3 +98,8 @@ class Mod(object):
     def fun(self, name, func):
         self.funs[name] = func
 
+    def register(self, func):
+        """Register a function within this module."""
+
+        self.funs[func.__name__] = func
+
