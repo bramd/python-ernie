@@ -2,12 +2,13 @@
 
 __version__ = "0.0.1"
 
-import SocketServer
-from ernie import Ernie
+from SocketServer import TCPServer
+from ernie import Ernie, ThreadingTCPServer
 
 def mod(name):
     return Ernie.mod(name)
 
-def start(host='', port=9999):
+def start(host='', port=9999, threading=True):
     Ernie.log("Starting")
-    SocketServer.TCPServer((host, port), Ernie).serve_forever()
+    server = ThreadingTCPServer if threading else TCPServer
+    server((host, port), Ernie).serve_forever()

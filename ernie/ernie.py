@@ -103,3 +103,5 @@ class Mod(object):
 
         self.funs[func.__name__] = func
 
+class ThreadingTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
+  pass
