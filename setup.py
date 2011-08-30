@@ -1,16 +1,22 @@
 #!/usr/bin/env python
 
 from distutils.core import setup
+import pkg_resources
 
-from bert import __version__ as version
+# You need to have python-bert installed first.
+version = pkg_resources.get_distribution("bert").version
 
+# The original author of this library is
+# Ken Robertson ken@invalidlogic.com
+# This version is a fork on github maintained by
+# Tyler Neylon tyler@zillabyte.com.
 setup(
     name = 'ernie',
     version = version,
     description = 'BERT-Ernie Library',
-    author = 'Ken Robertson',
-    author_email = 'ken@invalidlogic.com',
-    url = 'http://invalidlogic.com',
+    author = 'Tyler Neylon',
+    author_email = 'tyler@zillabyte.com',
+    url = 'https://github.com/tylerneylon/python-ernie',
     packages = ['ernie'],
     classifiers = [
         'Intended Audience :: Developers',
