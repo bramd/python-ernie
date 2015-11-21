@@ -1,4 +1,5 @@
 build
 *.pyc
 *.sh
+*.egg-info
 .DS_Store

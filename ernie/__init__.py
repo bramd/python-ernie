@@ -2,8 +2,8 @@
 
 __version__ = "0.0.2"
 
-from SocketServer import TCPServer
-from ernie import Ernie, ThreadingTCPServer
+from socketserver import TCPServer
+from .ernie import Ernie, ThreadingTCPServer
 
 def mod(name):
     return Ernie.mod(name)

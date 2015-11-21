@@ -1,10 +1,10 @@
 import logging
 import bert
 import struct
-import SocketServer
+import socketserver
 
 
-class Ernie(SocketServer.StreamRequestHandler):
+class Ernie(socketserver.StreamRequestHandler):
     mods = {}
     logger = None
     
@@ -53,7 +53,7 @@ class Ernie(SocketServer.StreamRequestHandler):
         ipy = self.read_berp()
         
         if not ipy:
-            print 'Could not read BERP length header. Ernie server may have gone away. Exiting now.'
+            print('Could not read BERP length header. Ernie server may have gone away. Exiting now.')
             exit()
         
         self.log("-> " + ipy.__str__())
@@ -63,9 +63,9 @@ class Ernie(SocketServer.StreamRequestHandler):
             
             try:
                 res = self.dispatch(mod, fun, args)
-            except ServerError, e:
+            except ServerError as e:
                 opy = (bert.Atom('error'), (bert.Atom('server'), 0, str(type(e)), str(e), ''))
-            except Exception, e:
+            except Exception as e:
                 opy = (bert.Atom('error'), (bert.Atom('user'), 0, str(type(e)), str(e), ''))
             else:
                 opy = (bert.Atom('reply'), res)
@@ -103,6 +103,6 @@ class Mod(object):
 
         self.funs[func.__name__] = func
 
-class ThreadingTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
+class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
   pass
 
