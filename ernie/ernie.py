@@ -4,7 +4,7 @@ import struct
 import socketserver
 
 
-class Ernie(socketserver.StreamRequestHandler):
+class ErnieBase(object):
     mods = {}
     logger = None
     
@@ -85,6 +85,9 @@ class Ernie(socketserver.StreamRequestHandler):
             self.write_berp(opy)
 
 
+class Ernie(ErnieBase, socketserver.StreamRequestHandler):
+    pass
+
 class ServerError(Exception):
     def __str__(self):
         return repr(self.args[0])
@@ -104,5 +107,5 @@ class Mod(object):
         self.funs[func.__name__] = func
 
 class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
-  pass
+    pass
 
